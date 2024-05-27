@@ -1,6 +1,9 @@
 import os
 import sys
 import pygame as pg
+import time
+
+WIDTH , HEIGHT = 600,900
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -14,6 +17,12 @@ def main():
     enn = pg.Surface((20, 20))
     pg.draw.circle(enn, (255, 0, 0), (10, 10), 10)
     enn.set_colorkey((0, 0, 0))
+    
+    fonto = pg.font.Font(None,80)
+    txt = fonto.render("Game Over",True,(255,0,0))
+    screen.blit(txt,[WIDTH/2-150, HEIGHT/2])
+    pg.display.update()
+    time.sleep(5)
 
     tmr = 0
     while True:
